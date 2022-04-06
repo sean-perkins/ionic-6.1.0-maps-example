@@ -1,20 +1,95 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade" [src]="mapSrc">
+  </iframe>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-modal [breakpoints]="[0.08, 0.415, 1]" [initialBreakpoint]="0.415" [isOpen]="true">
+    <ng-template>
+      <ion-header>
+        <ion-searchbar placeholder="Search Maps" (ionFocus)="onSearchbarFocused()"></ion-searchbar>
+      </ion-header>
+      <ion-content>
+        <div class="ion-padding">
+          <ion-label class="section-heading">Siri Suggestions</ion-label>
+          <ion-item class="ion-padding-top item-lines-none list-item">
+            <ion-icon slot="start" name="car"></ion-icon>
+            <div>
+              <ion-text>
+                <h5>Parked Car</h5>
+              </ion-text>
+              <ion-label color="medium">90 ft away, near Some Rd</ion-label>
+            </div>
+          </ion-item>
+        </div>
+
+        <div class="favorites ion-padding-horizontal">
+          <div class="section-header">
+            <ion-label class="section-heading">Favorites</ion-label>
+            <ion-button fill="clear">More</ion-button>
+          </div>
+          <ion-item class="item-lines-none">
+            <div class="favorite-list-item">
+              <ion-col class="favorite-item favorite-item-home">
+                <ion-icon name="home"></ion-icon>
+                <ion-label>Home</ion-label>
+                <ion-label class="sub-label">Close by</ion-label>
+              </ion-col>
+              <ion-col class="favorite-item">
+                <ion-icon name="briefcase"></ion-icon>
+                <ion-label>Work</ion-label>
+                <ion-label class="sub-label">Add</ion-label>
+              </ion-col>
+              <ion-col class="favorite-item">
+                <ion-icon name="add"></ion-icon>
+                <ion-label>Add</ion-label>
+              </ion-col>
+            </div>
+          </ion-item>
+        </div>
+
+        <div class="recents ion-padding-horizontal">
+          <div class="section-header">
+            <ion-label class="section-heading">Recents</ion-label>
+            <ion-button fill="clear">More</ion-button>
+          </div>
+          <ion-list>
+            <ion-item class="ion-padding-top item-lines-none list-item">
+              <ion-icon slot="start" name="pin"></ion-icon>
+              <div>
+                <ion-text>
+                  <h5>Dropped Pin</h5>
+                </ion-text>
+                <ion-label color="medium">90 ft away, near Some Rd</ion-label>
+              </div>
+            </ion-item>
+            <ion-item class="ion-padding-top item-lines-none list-item">
+              <ion-icon slot="start" name="pin"></ion-icon>
+              <div>
+                <ion-text>
+                  <h5>Home</h5>
+                </ion-text>
+                <ion-label color="medium">90 ft away, near Some Rd</ion-label>
+              </div>
+            </ion-item>
+            <ion-item class="ion-padding-top item-lines-none list-item">
+              <ion-icon slot="start" name="pin"></ion-icon>
+              <div>
+                <ion-text>
+                  <h5>Gym</h5>
+                </ion-text>
+                <ion-label color="medium">90 ft away, near Some Rd</ion-label>
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+
+        <div class="ion-padding buttons">
+          <ion-button expand="block" fill="clear">Share My Location</ion-button>
+          <ion-button expand="block" fill="clear">Mark My Location</ion-button>
+          <ion-button expand="block" fill="clear">Report an Issue</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
