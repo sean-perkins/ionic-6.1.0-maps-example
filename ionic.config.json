@@ -1,0 +1,7 @@
+{
+  "name": "ionic-6.1.0-sheet-modal-maps-example",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
