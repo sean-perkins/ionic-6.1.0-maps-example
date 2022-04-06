@@ -30,7 +30,6 @@ export class HomePage implements OnInit, OnDestroy {
       });
       Keyboard.setAccessoryBarVisible({ isVisible: true });
     }
-    console.log('has api key', this.hasApiKey);
   }
 
   ngOnDestroy(): void {
@@ -45,7 +44,5 @@ export class HomePage implements OnInit, OnDestroy {
     // When the search bar is focused, set the modal breakpoint to 1
     this.modal.setCurrentBreakpoint(1);
   }
-
-
 
 }
