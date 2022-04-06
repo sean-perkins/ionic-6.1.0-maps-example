@@ -1,8 +1,11 @@
 <ion-content>
 
-  <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+
+  <iframe *ngIf="hasApiKey" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
     referrerpolicy="no-referrer-when-downgrade" [src]="mapSrc">
   </iframe>
+
+  <div *ngIf="!hasApiKey" class="fake-map"></div>
 
   <ion-modal [breakpoints]="[0.08, 0.415, 1]" [initialBreakpoint]="0.415" [isOpen]="true">
     <ng-template>

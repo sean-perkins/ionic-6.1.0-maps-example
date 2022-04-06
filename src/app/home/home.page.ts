@@ -3,7 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
 import { IonModal, Platform } from '@ionic/angular';
 
-const API_KEY = 'AIzaSyAjZSqzUvriCqo1cs7XfVm8boAVq9ONGmI';
+const API_KEY = '';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -19,6 +19,10 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(private platform: Platform, private sanitizer: DomSanitizer) { }
 
+  get hasApiKey() {
+    return API_KEY !== '';
+  }
+
   ngOnInit(): void {
     if (this.platform.is('capacitor')) {
       Keyboard.setResizeMode({
@@ -26,6 +30,7 @@ export class HomePage implements OnInit, OnDestroy {
       });
       Keyboard.setAccessoryBarVisible({ isVisible: true });
     }
+    console.log('has api key', this.hasApiKey);
   }
 
   ngOnDestroy(): void {
@@ -40,5 +45,7 @@ export class HomePage implements OnInit, OnDestroy {
     // When the search bar is focused, set the modal breakpoint to 1
     this.modal.setCurrentBreakpoint(1);
   }
+
+
 
 }

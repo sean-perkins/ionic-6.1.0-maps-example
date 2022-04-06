@@ -18,6 +18,16 @@ ion-item {
   --padding-bottom: 8px;
 }
 
+.fake-map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image: url(https://koenig-media.raywenderlich.com/uploads/2020/02/Simulator-Screen-Shot-iPhone-11-Pro-Max-2020-02-26-at-22.02.18-231x500.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
